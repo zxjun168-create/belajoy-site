@@ -14,21 +14,46 @@
 <body class="bg-gray-50 text-gray-900 font-sans">
 
     <!-- Navigation -->
-    <nav class="flex justify-between items-center px-8 py-6 bg-white shadow-sm sticky top-0 z-50">
+    <nav class="flex justify-between items-center px-6 py-4 md:px-8 md:py-6 bg-white shadow-sm relative z-50">
         <div class="text-2xl font-bold text-indigo-600">BelaJoy</div>
+        
+        <!-- Desktop Menu -->
         <div class="space-x-8 hidden md:flex font-medium">
             <a href="#games" class="hover:text-indigo-600">Games</a>
             <a href="#about" class="hover:text-indigo-600">About Us</a>
             <a href="#contact" class="hover:text-indigo-600">Contact</a>
             <a href="privacy.html" class="hover:text-indigo-600">Privacy Policy</a>
         </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none p-2 z-50 relative">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="flex justify-end p-4 border-b">
+            <button id="mobile-menu-close" class="text-gray-700 hover:text-indigo-600 text-2xl">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="flex flex-col px-6 py-4 space-y-4">
+            <a href="#games" class="hover:text-indigo-600 font-medium py-3 border-b border-gray-100">Games</a>
+            <a href="#about" class="hover:text-indigo-600 font-medium py-3 border-b border-gray-100">About Us</a>
+            <a href="#contact" class="hover:text-indigo-600 font-medium py-3 border-b border-gray-100">Contact</a>
+            <a href="privacy.html" class="hover:text-indigo-600 font-medium py-3">Privacy Policy</a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <header class="hero-bg text-white py-20 px-8 text-center">
         <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Fun and Relaxing Casual Games</h1>
         <p class="text-xl opacity-90 mb-8">We create entertaining mobile games for players worldwide.</p>
-        <a href="#games" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100">View Our Games</a>
+        <a href="#games" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 inline-block">View Our Games</a>
     </header>
 
     <!-- Games Section -->
@@ -84,7 +109,7 @@
     <!-- Footer -->
     <footer id="contact" class="bg-gray-900 text-white py-12 px-8">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-6 md:mb-0">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
                 <p class="text-xl font-bold">Tianjin Beilamei Commerce And Trade Co., Ltd.</p>
                 <p class="text-gray-400 mt-2">© 2026 BelaJoy Games. All rights reserved.</p>
             </div>
@@ -95,6 +120,56 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+
+            function openMenu() {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                mobileMenuOverlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenuOverlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+
+            // Open menu
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                openMenu();
+            });
+
+            // Close menu with X button
+            mobileMenuClose.addEventListener('click', function(e) {
+                e.preventDefault();
+                closeMenu();
+            });
+
+            // Close menu when clicking overlay
+            mobileMenuOverlay.addEventListener('click', function() {
+                closeMenu();
+            });
+
+            // Close menu when clicking on a link
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    closeMenu();
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
