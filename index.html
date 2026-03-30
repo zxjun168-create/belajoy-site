@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BelaJoy Games | Casual Mobile Games</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .game-card:hover { transform: translateY(-10px); transition: all 0.3s ease; }
+        .hero-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+    <!-- Navigation -->
+    <nav class="flex justify-between items-center px-8 py-6 bg-white shadow-sm sticky top-0 z-50">
+        <div class="text-2xl font-bold text-indigo-600">BelaJoy</div>
+        <div class="space-x-8 hidden md:flex font-medium">
+            <a href="#games" class="hover:text-indigo-600">Games</a>
+            <a href="#about" class="hover:text-indigo-600">About Us</a>
+            <a href="#contact" class="hover:text-indigo-600">Contact</a>
+            <a href="privacy.html" class="hover:text-indigo-600">Privacy Policy</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white py-20 px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Fun and Relaxing Casual Games</h1>
+        <p class="text-xl opacity-90 mb-8">We create entertaining mobile games for players worldwide.</p>
+        <a href="#games" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100">View Our Games</a>
+    </header>
+
+    <!-- Games Section -->
+    <section id="games" class="max-w-6xl mx-auto py-20 px-8">
+        <h2 class="text-3xl font-bold mb-12 text-center">Our Featured Games</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg game-card">
+                <img src="images/game1.png" alt="Block Master" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Block Master</h3>
+                    <p class="text-gray-600 mb-4">A minimalist block-matching puzzle for relaxing moments.</p>
+                    <div class="flex space-x-4">
+                        <i class="fab fa-apple text-2xl"></i>
+                        <i class="fab fa-google-play text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg game-card">
+                <img src="images/game2.png" alt="Logic Flow" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Logic Flow</h3>
+                    <p class="text-gray-600 mb-4">Challenge your IQ with complex logic flow puzzles.</p>
+                    <div class="flex space-x-4">
+                        <i class="fab fa-apple text-2xl"></i>
+                        <i class="fab fa-google-play text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg game-card">
+                <img src="images/game3.png" alt="Color Sort 3D" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Color Sort 3D</h3>
+                    <p class="text-gray-600 mb-4">Viral ASMR sorting puzzle game for everyone.</p>
+                    <div class="flex space-x-4">
+                        <i class="fab fa-apple text-2xl"></i>
+                        <i class="fab fa-google-play text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-20 px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">About BelaJoy Games</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                BelaJoy is operated by Tianjin Beilamei Commerce And Trade Co., Ltd. We specialize in casual mobile games designed to bring joy and relaxation to players worldwide.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-12 px-8">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <p class="text-xl font-bold">Tianjin Beilamei Commerce And Trade Co., Ltd.</p>
+                <p class="text-gray-400 mt-2">© 2026 BelaJoy Games. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6 text-2xl">
+                <a href="#" class="hover:text-indigo-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-indigo-400"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:support@belajoygames.site" class="hover:text-indigo-400"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
