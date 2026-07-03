@@ -2307,3 +2307,4 @@ sharethrough.com, UbYLkrys, RESELLER, d53b998a7bd4ecd2
 myfeature.tv, WUK6VDvHBmA6l3PToPJK, RESELLER
 rubiconproject.com, 25686, RESELLER, 0bfd66d529a55807
 alpecs.com, 4116628010, RESELLER
+vungle.com, 6a2a8b5aede581a042450da5, DIRECT, c107d686becd2d77
